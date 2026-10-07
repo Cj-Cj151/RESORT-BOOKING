@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Records | Azure Haven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="records-page">
+
+    <header class="navbar">
+        <a href="index.html" class="logo">AZURE HAVEN</a>
+
+        <nav>
+            <a href="index.html">Back to Resort</a>
+        </nav>
+    </header>
+
+    <main class="records-main">
+
+        <div class="records-header">
+            <div>
+                <p class="eyebrow">AZURE HAVEN</p>
+                <h1>Booking Records</h1>
+                <p>View submitted booking requests from the resort booking form.</p>
+            </div>
+
+            <button class="clear-records" id="clearRecords">
+                Clear All Records
+            </button>
+        </div>
+
+        <div class="records-container" id="recordsContainer"></div>
+
+        <div class="empty-records" id="emptyRecords">
+            <h2>No bookings yet.</h2>
+            <p>Submitted booking requests will appear here.</p>
+            <a href="index.html" class="records-book-btn">
+                Make a Booking
+            </a>
+        </div>
+
+    </main>
+
+    <script>
+        const recordsContainer = document.getElementById("recordsContainer");
+        const emptyRecords = document.getElementById("emptyRecords");
+        const clearRecords = document.getElementById("clearRecords");
+
+        function loadBookings() {
+            const bookings =
+                JSON.parse(localStorage.getItem("azureHavenBookings")) || [];
+
+            recordsContainer.innerHTML = "";
+
+            if (bookings.length === 0) {
+                emptyRecords.style.display = "block";
+                return;
+            }
+
+            emptyRecords.style.display = "none";
+
+            bookings.forEach(function (booking) {
+                const card = document.createElement("article");
+                card.className = "booking-record";
+
+                card.innerHTML = `
+                    <div class="booking-record-header">
+                        <div>
+                            <span class="record-label">GUEST</span>
+                            <h2>${booking.fullName}</h2>
+                        </div>
+                        <span class="record-room">${booking.room}</span>
+                    </div>
+
+                    <div class="booking-details">
+                        <div>
+                            <span>Email</span>
+                            <strong>${booking.email}</strong>
+                        </div>
+
+                        <div>
+                            <span>Phone</span>
+                            <strong>${booking.phone}</strong>
+                        </div>
+
+                        <div>
+                            <span>Check-in</span>
+                            <strong>${booking.checkIn}</strong>
+                        </div>
+
+                        <div>
+                            <span>Check-out</span>
+                            <strong>${booking.checkOut}</strong>
+                        </div>
+
+                        <div>
+                            <span>Guests</span>
+                            <strong>${booking.guests}</strong>
+                        </div>
+
+                        <div>
+                            <span>Submitted</span>
+                            <strong>${booking.submittedAt}</strong>
+                        </div>
+                    </div>
+
+                    <div class="record-notes">
+                        <span>Special Requests</span>
+                        <p>${booking.notes || "No special requests."}</p>
+                    </div>
+                `;
+
+                recordsContainer.appendChild(card);
+            });
+        }
+
+        clearRecords.addEventListener("click", function () {
+            const bookings =
+                JSON.parse(localStorage.getItem("azureHavenBookings")) || [];
+
+            if (bookings.length === 0) {
+                return;
+            }
+
+            const confirmed = confirm(
+                "Are you sure you want to delete all booking records?"
+            );
+
+            if (confirmed) {
+                localStorage.removeItem("azureHavenBookings");
+                loadBookings();
+            }
+        });
+
+        loadBookings();
+    </script>
+
+</body>
+</html>

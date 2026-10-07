@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Haven Resort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">AZURE HAVEN</a>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#rooms">Rooms</a>
+            <a href="#amenities">Amenities</a>
+            <button class="nav-book-btn" id="openBooking">Book Now</button>
+        </nav>
+
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="assets/resort-video.mp4" type="video/mp4">
+            </video>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <p class="eyebrow">WELCOME TO AZURE HAVEN</p>
+
+                <h1>Your Perfect Getaway Starts Here.</h1>
+
+                <p class="hero-text">
+                    Escape the ordinary and experience a peaceful stay
+                    surrounded by comfort, nature, and unforgettable views.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="primary-btn" id="heroBook">
+                        Book Your Stay
+                    </button>
+
+                    <a href="#rooms" class="secondary-btn">
+                        Explore Resort
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about section" id="about">
+
+            <div class="about-content">
+
+                <div>
+                    <h2>A Place to<br><span>Slow Down.</span></h2>
+                </div>
+
+                <div class="about-right">
+
+                    <p>
+                        Azure Haven is your peaceful escape from the everyday.
+                        Enjoy beautiful surroundings, comfortable spaces, and
+                        moments designed to help you relax and reconnect.
+                    </p>
+
+                    <div class="highlights">
+
+                        <div class="highlight-item">
+                            <span class="highlight-title">COMFORT</span>
+                            <p>
+                                Comfortable spaces designed for a peaceful stay.
+                            </p>
+                        </div>
+
+                        <div class="highlight-item">
+                            <span class="highlight-title">NATURE</span>
+                            <p>
+                                Beautiful surroundings made for slowing down.
+                            </p>
+                        </div>
+
+                        <div class="highlight-item">
+                            <span class="highlight-title">EXPERIENCE</span>
+                            <p>
+                                Moments you'll remember long after your stay.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="rooms section" id="rooms">
+
+            <div class="section-heading">
+                <h2>Stay Somewhere<br><span>Beautiful.</span></h2>
+            </div>
+
+            <div class="room-grid">
+
+                <article class="room-card">
+
+                    <div class="room-image room-one"></div>
+
+                    <div class="room-info">
+                        <h3>Deluxe Suite</h3>
+
+                        <span>
+                            Elegant comfort for a relaxing stay.
+                        </span>
+
+                        <button class="room-book" data-room="Deluxe Suite">
+                            Book Room
+                        </button>
+                    </div>
+
+                </article>
+
+                <article class="room-card">
+
+                    <div class="room-image room-two"></div>
+
+                    <div class="room-info">
+                        <h3>Ocean View Villa</h3>
+
+                        <span>
+                            Wake up to beautiful coastal views.
+                        </span>
+
+                        <button class="room-book" data-room="Ocean View Villa">
+                            Book Room
+                        </button>
+                    </div>
+
+                </article>
+
+                <article class="room-card">
+
+                    <div class="room-image room-three"></div>
+
+                    <div class="room-info">
+                        <h3>Standard Room</h3>
+
+                        <span>
+                            Simple, comfortable, and thoughtfully designed.
+                        </span>
+
+                        <button class="room-book" data-room="Standard Room">
+                            Book Room
+                        </button>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="amenities section" id="amenities">
+
+            <div class="amenities-heading">
+                <h2>Everything You Need<br><span>To Unwind.</span></h2>
+            </div>
+
+            <div class="amenities-grid">
+
+                <div class="amenity">
+                    <h3>Infinity Pool</h3>
+                    <p>
+                        Take a refreshing swim while enjoying the peaceful surroundings.
+                    </p>
+                </div>
+
+                <div class="amenity">
+                    <h3>Fine Dining</h3>
+                    <p>
+                        Enjoy carefully prepared meals in a relaxing atmosphere.
+                    </p>
+                </div>
+
+                <div class="amenity">
+                    <h3>Free Wi-Fi</h3>
+                    <p>
+                        Stay connected whenever you need to.
+                    </p>
+                </div>
+
+                <div class="amenity">
+                    <h3>Outdoor Spaces</h3>
+                    <p>
+                        Discover peaceful areas made for slowing down.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="cta">
+
+            <div class="cta-overlay"></div>
+
+            <div class="cta-content">
+                <p class="eyebrow">YOUR NEXT ESCAPE AWAITS</p>
+
+                <h2>Ready for Your<br>Next Escape?</h2>
+
+                <button class="primary-btn" id="ctaBook">
+                    Book Your Stay
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div>
+            <a href="#" class="logo">AZURE HAVEN</a>
+
+            <p>Your peaceful escape awaits.</p>
+
+            <a href="bookings.html" class="records-link">
+                View Booking Records
+            </a>
+        </div>
+
+        <p>© 2026 Azure Haven Resort. All rights reserved.</p>
+
+    </footer>
+
+    <div class="modal" id="bookingModal">
+
+        <div class="modal-content">
+
+            <button class="close-modal" id="closeBooking">×</button>
+
+            <div class="modal-header">
+
+                <p class="eyebrow">AZURE HAVEN</p>
+
+                <h2>Book Your Stay</h2>
+
+                <p>Tell us a little about your stay.</p>
+
+            </div>
+
+            <form id="bookingForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+
+                        <input type="text" id="fullName">
+
+                        <span class="error" id="fullNameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+
+                        <input type="email" id="email">
+
+                        <span class="error" id="emailError"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+
+                    <input type="tel" id="phone">
+
+                    <span class="error" id="phoneError"></span>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="checkIn">Check-in</label>
+
+                        <input type="date" id="checkIn">
+
+                        <span class="error" id="checkInError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkOut">Check-out</label>
+
+                        <input type="date" id="checkOut">
+
+                        <span class="error" id="checkOutError"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="room">Room</label>
+
+                        <select id="room">
+                            <option value="">Select a room</option>
+                            <option value="Deluxe Suite">Deluxe Suite</option>
+                            <option value="Ocean View Villa">Ocean View Villa</option>
+                            <option value="Standard Room">Standard Room</option>
+                        </select>
+
+                        <span class="error" id="roomError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Guests</label>
+
+                        <input
+                            type="number"
+                            id="guests"
+                            min="1"
+                            max="20"
+                        >
+
+                        <span class="error" id="guestsError"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="notes">
+                        Special Requests
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        rows="3"
+                        placeholder="Anything we should know?"
+                    ></textarea>
+
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Check Availability
+                </button>
+
+                <div class="success-message" id="successMessage">
+                    Booking request submitted successfully.
+                    We will contact you shortly to confirm your reservation.
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
